@@ -393,8 +393,8 @@ class Avcurrency_Exchange
 
 			<div class="card" style="max-width: 860px;">
 
-				<h1><?php _e('Rvcurrency Exchange', 'rvcurrencyexchange'); ?></h1>
-
+				<h1><?php _e('Rvcurrency Exchange', 'rvcurrencyexchange'); ?> </h1>
+				<small>power Devpwo Paul Osinga</small>
 				<p>
 					Options of your currencies.
 				</p>
