@@ -131,9 +131,10 @@ class Avcurrency_Exchange
 					setTimeout(function() {
 						jQuery('.count').each(function() {
 							var duration = parseInt($(this).data('duration'));
-
+							var amount = parseInt($(this).data('amount'));
+							$(this).fadeIn(200);
 							$(this).prop('Counter', 0).animate({
-								Counter: $(this).text()
+								Counter: amount
 							}, {
 								duration: duration,
 								easing: 'swing',
@@ -422,13 +423,13 @@ class Avcurrency_Exchange
 							width: 510px
 						}
 					</style>
-<div id="editor">.rvcurrencyexchange {
-	position: relative;
-}
-.rvcurrencyexchange.amount{
-	font-size: 20px;
-}
-</div>
+					<div id="editor">.rvcurrencyexchange {
+						position: relative;
+						}
+						.rvcurrencyexchange.amount{
+						font-size: 20px;
+						}
+					</div>
 					<hr>
 					<?php submit_button(); ?>
 

@@ -43,5 +43,8 @@ add_shortcode('rvcurrencyexchange', function($atts){
     $symbol = $p['symbol'];
     $amount = $settings[$type];
     $duration = $p['duration'];
-    echo "<span class='rvcurrencyexchange amount count' data-duration='$duration' >$amount</span> <span class='rvcurrencyexchange symbol'>$symbol</span>";
+    echo "<span class='rvcurrencyexchange amount count' 
+            data-amount='$amount'
+            data-duration='$duration' 
+            style='display:none;'>0</span> <span class='rvcurrencyexchange symbol'>$symbol</span>";
 }); //shortcode
