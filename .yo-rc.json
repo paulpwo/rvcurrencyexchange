@@ -1,0 +1,13 @@
+{
+  "@wptools/generator-plugin": {
+    "projectName": "rvcurrencyexchange",
+    "projectTitle": "Rvcurrency Exchange",
+    "projectDescription": "Plugin complementario ",
+    "projectManager": true,
+    "projectVersion": "0.1.0",
+    "projectAuthor": "Paul Osinga",
+    "projectLicense": "GPL-2.0",
+    "className": "Avcurrency_Exchange",
+    "definePrefix": "Avcurrency_Exchange"
+  }
+}
