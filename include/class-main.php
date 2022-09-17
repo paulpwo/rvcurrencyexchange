@@ -123,7 +123,7 @@ class Avcurrency_Exchange
 					setTimeout(function() {
 						jQuery('.count').each(function() {
 							var duration = parseInt($(this).data('duration'));
-							
+
 							$(this).prop('Counter', 0).animate({
 								Counter: $(this).text()
 							}, {
@@ -374,7 +374,28 @@ class Avcurrency_Exchange
 
 				<h1><?php _e('Rvcurrency Exchange', 'rvcurrencyexchange'); ?></h1>
 
-				<p><?php _e('Options of your currencies', 'rvcurrencyexchange'); ?></p>
+				<p>
+					Options of your currencies.
+
+
+				</p>
+				<ul>
+					<li>
+						example of use simple default options: <b>[rvcurrencyexchange]</b>
+					</li>
+					<li>
+						example of use with options: <b> [rvcurrencyexchange type="usa_purchase" symbol="$" duration="5000"]</b>
+					</li>
+				</ul>
+				<p>
+					<b>Options:</b>
+				<ul>
+					<li>type: usa_purchase, usa_sale, eu_purchase, eu_sale, bri_purchase, bri_sale (usa_purchase is default)</li>
+					<li>symbol: $, €, ¢</li>
+					<li>duration: 5000, 10000, 15000, 20000 (0 for disable) (20000 is default)</li>
+				</ul>
+
+				</p>
 
 			</div>
 
