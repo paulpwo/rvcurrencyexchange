@@ -47,6 +47,6 @@ This project was created using a free Yeoman generator called WordPress Plugin c
 == Changelog ==
 
 = 0.1.0 =
-Release Date: Wed Sep 30 2022
+Release Date: Fri Sep 16 2022
 
 Created the plugin files using Yeoman WordPress Plugin generator.
