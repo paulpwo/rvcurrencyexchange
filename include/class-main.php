@@ -131,7 +131,14 @@ class Avcurrency_Exchange
 					setTimeout(function() {
 						jQuery('.count').each(function() {
 							var duration = parseInt($(this).data('duration'));
-							var amount = parseInt($(this).data('amount'));
+							var amount = $(this).data('amount')
+							var isDecimal = false;
+							try {
+								amount = amount.replace(',', '.');
+								isDecimal = true;
+							} catch (e) {}
+							var amount = parseFloat(amount);
+
 							$(this).fadeIn(200);
 							$(this).prop('Counter', 0).animate({
 								Counter: amount
@@ -139,7 +146,14 @@ class Avcurrency_Exchange
 								duration: duration,
 								easing: 'swing',
 								step: function(now) {
-									$(this).text(Math.ceil(now));
+									if (isDecimal) {
+										var rs = Math.round(now * 100) / 100;
+										rs = rs.toString().replace('.', ',');
+									} else {
+										var rs = Math.round(now);
+										rs = rs.toString();
+									}
+									$(this).text(rs);
 								}
 							});
 						});
