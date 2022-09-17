@@ -109,9 +109,17 @@ class Avcurrency_Exchange
 	{
 
 		load_plugin_textDomain('rvcurrencyexchange', false, dirname(RVCURRENCY_DIR_BASENAME) . '/languages');
+		add_action('wp_head', array($this, 'plugin_add_custom_css'));
 		add_action('wp_footer', array($this, 'loadBotton')); //cargar en el foofte
 	}
-
+	function plugin_add_custom_css()
+	{
+		$this->settings = get_option('rvcurrencyexchange_main_options');
+		$custom_css = $this->settings['special_options'];
+		if (!empty($custom_css)) {
+			echo '<style type="text/css"> /* Developer: paulpwo */' . $custom_css . '</style>';
+		}
+	}
 	function loadBotton()
 	{
 		$this->settings = get_option('rvcurrencyexchange_main_options');
@@ -182,8 +190,6 @@ class Avcurrency_Exchange
 		add_settings_field('bri_sale', 'BRITISH SALE', array($this, 'bri_sale_callback'), 'rvcurrencyexchange-settings', 'bri_main');
 
 		register_setting('rvcurrencyexchange-settings-group2', 'rvcurrencyexchange_main_options2', array($this, 'plugin_sanitize_settings2'));
-
-
 		add_settings_section('special_options', __('Styles (CAUTION ON MODIFY THIS CODE)', 'rvcurrencyexchange'), array($this, 'main_section_callback2'), 'rvcurrencyexchange-settings2');
 	}
 
@@ -376,8 +382,6 @@ class Avcurrency_Exchange
 
 				<p>
 					Options of your currencies.
-
-
 				</p>
 				<ul>
 					<li>
@@ -418,10 +422,13 @@ class Avcurrency_Exchange
 							width: 510px
 						}
 					</style>
-					<div id="editor">.rvcurrencyexchange {
-						position: relative;
-						}
-					</div>
+<div id="editor">.rvcurrencyexchange {
+	position: relative;
+}
+.rvcurrencyexchange.amount{
+	font-size: 20px;
+}
+</div>
 					<hr>
 					<?php submit_button(); ?>
 
